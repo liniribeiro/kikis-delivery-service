@@ -14,3 +14,18 @@ Também há em uma entrega, a data e um horário estimado para a entrega.
 
 
 
+
+docker-compose:
+- kibana
+- elastic
+- apm
+- postgres
+- redis
+
+Levantar o serviço localmente:
+
+Celery Parameters:
+worker -A src.celery_app.celery_app -l info -P gevent -n kikis-delivery-service-worker@%n --autoscale=1,1 -Q kikis-delivery-service
+
+Gunicorn Parameters:
+-c ./src/gunicorn.py src.app:app

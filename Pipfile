@@ -1,17 +1,7 @@
-#[[source]]
-#name = "pypi"
-#url = "https://pypi.org/simple"
-#verify_ssl = true
-
 [[source]]
+name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-name = "pypi"
-
-[[source]]
-url = "http://jfrog.ops.ecsbr.net/artifactory/api/pypi/pypi-local/simple/"
-verify_ssl = false
-name = "jfrog"
 
 [dev-packages]
 
@@ -26,6 +16,10 @@ alembic = "*"
 flask-sqlalchemy = "*"
 psycopg2-binary = "*"
 flask = "*"
+flask-restful = "*"
+celery = "*"
+elastic-apm = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.8"

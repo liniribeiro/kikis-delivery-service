@@ -20,5 +20,5 @@ class User(BaseModel):
 
     def to_dict(self):
         return {
-            'id': self.id
+            'id': str(self.id)
         }

@@ -1,6 +1,6 @@
 from enum import Enum
 
-from sqlalchemy import Column, String, ForeignKey, DateTime, Enum as EnumSqlAlchemy, Float
+from sqlalchemy import Column, ForeignKey, DateTime, Enum as EnumSqlAlchemy, Float
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
@@ -30,5 +30,11 @@ class Delivery(BaseModel):
 
     def __repr__(self):
         return f'Delivery'
+
+    # TODO: Retornar os dados parseados
+    def to_dict(self):
+        return {
+                'id': str(self.id)
+        }
 
 
