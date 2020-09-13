@@ -1,0 +1,31 @@
+#[[source]]
+#name = "pypi"
+#url = "https://pypi.org/simple"
+#verify_ssl = true
+
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "http://jfrog.ops.ecsbr.net/artifactory/api/pypi/pypi-local/simple/"
+verify_ssl = false
+name = "jfrog"
+
+[dev-packages]
+
+[packages]
+sqlalchemy = "*"
+singleton-decorator = "*"
+pytest = "*"
+python-decouple = "*"
+pytest-dotenv = "*"
+factory-boy = "*"
+alembic = "*"
+flask-sqlalchemy = "*"
+psycopg2-binary = "*"
+flask = "*"
+
+[requires]
+python_version = "3.8"
