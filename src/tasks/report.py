@@ -1,7 +1,7 @@
 
 from celery import Task
 
-from src.services.report import ReportService
+from src.services.delivery_report import ReportService
 
 
 class ReportTasK(Task):

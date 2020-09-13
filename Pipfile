@@ -20,6 +20,7 @@ flask-restful = "*"
 celery = "*"
 elastic-apm = "*"
 gunicorn = "*"
+boto = "*"
 
 [requires]
 python_version = "3.8"

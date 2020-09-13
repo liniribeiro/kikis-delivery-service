@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname( os.path.abspath(__file__)))
 HOST = config('HOST', default='0.0.0.0')
 PORT = config('PORT', cast=int, default=7000)
 DEBUG = config('DEBUG', default=False)
-
+BUCKET_NAME = config('BUCKET_NAME', 'xanana')
 
 CELERY = {
     "BROKER_URL": config('CELERY_BROKER_URL'),
