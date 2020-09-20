@@ -16,7 +16,7 @@ BUCKET_NAME = config('BUCKET_NAME', 'xanana')
 CELERY = {
     "BROKER_URL": config('CELERY_BROKER_URL'),
     "RESULT_BACKEND": config('CELERY_RESULT_BACKEND'),
-    "task_always_eager": False,
+    "CELERY_ALWAYS_EAGER": False,
     "CELERY_TIMEZONE": "America/Sao_Paulo",
     "CELERY_ENABLE_UTC": True,
 }

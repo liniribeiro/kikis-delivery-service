@@ -21,6 +21,11 @@ celery = "*"
 elastic-apm = "*"
 gunicorn = "*"
 boto = "*"
+gevent = "*"
+blinker = "*"
+boto3 = "*"
+requests = "*"
+pyminizip = "*"
 
 [requires]
 python_version = "3.8"

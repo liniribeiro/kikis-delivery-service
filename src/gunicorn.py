@@ -4,5 +4,4 @@ bind = f'{HOST}:{PORT}'
 workers = 2
 worker_class = 'gevent'
 max_requests = 300
-keepalive = 10
-timeout = 4000
+keepalive = 20
