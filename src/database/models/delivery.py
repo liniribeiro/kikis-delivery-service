@@ -4,7 +4,7 @@ from sqlalchemy import Column, ForeignKey, DateTime, Enum as EnumSqlAlchemy, Flo
 from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 
-from src.models.base import BaseModel
+from src.database.models.base import BaseModel
 
 
 class DeliveryStatus(Enum):
@@ -31,10 +31,17 @@ class Delivery(BaseModel):
     def __repr__(self):
         return f'Delivery'
 
-    # TODO: Retornar os dados parseados
     def to_dict(self):
         return {
-                'id': str(self.id)
+            'id': str(self.id),
+            'user_id': str(self.user_id),
+            'package_weight': str(self.package_weight),
+            'price': str(self.price),
+            'status': str(self.status.name),
+            'pick_up_date': str(self.pick_up_date),
+            'delivery_date': str(self.delivery_date),
+            'pick_up_address_id': str(self.pick_up_address_id),
+            'delivery_address_id': str(self.delivery_address_id),
         }
 
 

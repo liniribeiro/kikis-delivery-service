@@ -2,7 +2,7 @@
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 
-from src.models.base import BaseModel
+from src.database.models.base import BaseModel
 
 
 class User(BaseModel):
@@ -20,5 +20,7 @@ class User(BaseModel):
 
     def to_dict(self):
         return {
-            'id': str(self.id)
+            'id': str(self.id),
+            'email': str(self.email),
+            'delivery': [x.to_dict() for x in self.delivery],
         }

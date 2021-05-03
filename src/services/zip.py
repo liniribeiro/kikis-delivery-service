@@ -1,6 +1,6 @@
 import random
 
-import pyminizip as pyminizip
+# import pyminizip as pyminizip
 
 
 def generate_password():
@@ -15,5 +15,5 @@ def generate_password():
 def zip_file(file: str):
     zip_filename = f"{file[:-4]}.zip"
     password = generate_password()
-    pyminizip.compress(file, None, zip_filename, password, int(1))
+    # pyminizip.compress(file, None, zip_filename, password, int(1))
     return zip_filename, password

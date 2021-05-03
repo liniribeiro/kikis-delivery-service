@@ -3,7 +3,7 @@ import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from src.models import DeclarativeBase, User
+from src.database.models import DeclarativeBase, User
 
 engine = create_engine('sqlite:///:memory:')
 Session = scoped_session(sessionmaker())

@@ -25,7 +25,11 @@ gevent = "*"
 blinker = "*"
 boto3 = "*"
 requests = "*"
-pyminizip = "*"
+schematics = "*"
+redis = "*"
+wcwidth = "*"
+json-log-formatter = "*"
+
 
 [requires]
 python_version = "3.8"

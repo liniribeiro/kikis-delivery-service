@@ -1,6 +1,6 @@
 from alembic import command
 
-from src.migrations.config import alembic_cfg
+from src.database.migrations.config import alembic_cfg
 
 
 def revision():

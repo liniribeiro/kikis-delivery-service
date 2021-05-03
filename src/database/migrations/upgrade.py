@@ -1,5 +1,5 @@
 
-from src.migrations import upgrade
+from src.database.migrations import upgrade
 
 
 if __name__ == "__main__":

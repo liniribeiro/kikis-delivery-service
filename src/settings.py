@@ -12,6 +12,7 @@ HOST = config('HOST', default='0.0.0.0')
 PORT = config('PORT', cast=int, default=7000)
 DEBUG = config('DEBUG', default=False)
 BUCKET_NAME = config('BUCKET_NAME', 'xanana')
+API_KEY = config('API_KEY', default='1234')
 
 CELERY = {
     "BROKER_URL": config('CELERY_BROKER_URL'),

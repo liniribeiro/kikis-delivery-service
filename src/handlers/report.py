@@ -5,15 +5,12 @@ from flask import request
 from flask_restful import Resource
 
 from src.celery_main import QUEUE_NAME
-from src.services.address import AddressService
+from src.services.auth_service import requires_auth
 
 
 class ReportHandler(Resource):
 
-    def get(self, user_id):
-        deliveries = AddressService().get_all_addresses(user_id)
-        return deliveries, 200
-
+    @requires_auth
     def post(self):
         data = request.json
         current_app.send_task("report",
@@ -22,3 +19,5 @@ class ReportHandler(Resource):
                               queue=QUEUE_NAME)
 
         return HTTPStatus.OK
+
+

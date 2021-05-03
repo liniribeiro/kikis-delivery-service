@@ -3,11 +3,11 @@ PYTHONPATH := $(shell pwd)
 
 run_gunicorn:
 	@echo "---- Running Application ----"
-	@PYTHONPATH="${PYTHONPATH}" gunicorn -c ./src/gunicorn.py src.app:app
+	@PYTHONPATH="${PYTHONPATH}" gunicorn -c ./src/gunicorn.py src.main:app
 
 run_celery:
 	@echo "---- Running Celery ----"
-	@PYTHONPATH="${PYTHONPATH}" celery worker -A src.celery_app.celery_app -l info -P gevent -n kikis-delivery-service-worker@%n --autoscale=1,1 -Q kikis-delivery-service
+	@PYTHONPATH="${PYTHONPATH}" celery -A src.celery_main.celery_app worker -l info -P gevent -n kikis-delivery-service-worker@%n --autoscale=1,1 -Q kikis-delivery-service
 
 run_all:
 	@echo "---- Running Application + Celery ----"

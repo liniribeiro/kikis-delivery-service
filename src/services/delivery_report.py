@@ -1,14 +1,13 @@
-import csv
 import datetime
 import uuid
 
 from src.apm.apm_decorator import apm_capture_span
-from src.queries import get_delivery_report
+from src.database.queries import get_delivery_report
 from src.services.report_file import ReportFile
 from src.services.s3 import S3Service
 from src.services.zip import zip_file
 
-HEADERS = 'status'
+HEADERS = ['status']
 
 
 class ReportService(ReportFile):
@@ -27,7 +26,7 @@ class ReportService(ReportFile):
         status = delivery.status
 
         report_data = {
-            'status': status
+            'status': status.name
         }
 
         output = {}
@@ -46,5 +45,5 @@ class ReportService(ReportFile):
             self.write_rows_on_file(output_payload)
 
         zip_filename, password = zip_file(self.file_name)
-        s3_download_link = S3Service().send_file_to_s3(zip_filename)
+        # s3_download_link = S3Service().send_file_to_s3(zip_filename)
         self.delete_file(self.file_name)

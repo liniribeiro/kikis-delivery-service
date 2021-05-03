@@ -1,11 +1,17 @@
-from src.queries import get_all_deliveries, create_delivery
+from src.database.models import Delivery
+from src.database.queries import save, get_by_id, get_all, get_all_deliveries_by_user
 
 
 class DeliveryService:
 
     @staticmethod
-    def get_all_deliveries():
-        return get_all_deliveries()
+    def get_delivery(id, user_id):
+        if user_id:
+            return get_all_deliveries_by_user(user_id)
+        elif id:
+            return [get_by_id(Delivery, id)]
+        else:
+            return get_all(Delivery)
 
     @staticmethod
     def create_delivery(delivery: dict):
@@ -13,4 +19,5 @@ class DeliveryService:
             'status': 'in_queue',
             'price': 34.66
         })
-        create_delivery(delivery)
+        return save(Delivery, delivery)
+

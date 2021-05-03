@@ -25,7 +25,12 @@ docker-compose:
 Levantar o serviço localmente:
 
 Celery Parameters:
-worker -A src.celery_app.celery_app -l info -P gevent -n kikis-delivery-service-worker@%n --autoscale=1,1 -Q kikis-delivery-service
+worker -A src.celery_main.celery_app -l info -P gevent -n kikis-delivery-service-worker@%n --autoscale=1,1 -Q kikis-delivery-service
 
 Gunicorn Parameters:
 -c ./src/gunicorn.py src.app:app
+
+
+-> Buscar todos deliveries por status
+-> Biscar todos deliveries de uma pessoa
+->
